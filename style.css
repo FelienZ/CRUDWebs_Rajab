@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=IBM+Plex+Sans+Devanagari:wght@700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --col1:#0000004d;
+    --col2:#181c20;
+    --col3: #212529;
+    --col4: #2d3135;
+    --col5: #424549;
+    --col6: #404346;
+    --col7:#9c9c9c;
+    --col8:#dae0e7;
+    --col9:#262a2e;
+    --colr: #902e31;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background: linear-gradient(var(--colr)50%, var(--col2)50%);
+}
+.container{
+    padding: 20px;
+    box-shadow: 3px 3px 20px var(--col1);
+    background: var(--col3);
+    border-radius: 10px;
+    margin: 10px;
+    margin-top: 50px;
+}
+.container header .filterEntries{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.filterEntries .entries{
+    color: var(--col8);
+}
+.filterEntries .entries select, .filterEntries .filter input{
+    padding: 7px 10px;
+    border: 1px solid var(--col5);
+    color: var(--col8);
+    background: var(--col4);
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.filterEntries .filter{
+    display: flex;
+    align-items: center;
+}
+.filter label{
+    color: var(--col8);
+    margin-left: 5px;
+}
+.filter input:focus{
+    border-color: var(--col7);
+}
+.container header .addMemberBtn{
+    margin-bottom: 15px;
+}
+header .addMemberBtn button, .popup header .closeBtn .popup footer .submitBtn{
+    padding: 9px 14px;
+    color: var(--col8);
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    pointer-events: auto;
+    outline: none;
+    border: none;
+    border: 1px solid var(--col6);
+    background: var(--col4);
+    border-radius: 5px;
+}
+.addMemberBtn button:hover{
+    color: var(--col5);
+}
+.container table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+table .heading{
+    background: var(--col5);
+    background: transparent;
+    color: var(--col8);
+}
+table .heading th:hover{
+    background: var(--col4);
+    transition: 0.3s;
+}
+table tr th, table tr td{
+    padding: 4px 15px;
+    color: var(--col8);
+}
+table tr th{
+    padding: 12px 15px;
+}
+table tr td:nth-child(1),table tr td:nth-child(2){
+    text-align: center;
+}
+table tr:hover{
+    cursor: pointer;
+    background: var(--col9);
+}
+table tr td{
+    border-bottom: 1px solid var(--col6);
+}
+table tr:first-child td{
+    border-top: 1px solid var(--col6);
+}
+table tbody tr:nth-child(odd){
+    background: var(--col9);
+}
+table tbody tr:nth-child(odd) > td:nth-child(4){
+    background: var(--col4);
+}
+table tr td{
+    font-size: 15px;
+}
+table td button{
+    margin: 0 3px;
+    padding: 5px;
+    width: 35px;
+    color: var(--col7);
+    font-size: 16px;
+    cursor: pointer;
+    pointer-events: auto;
+    outline: none;
+    border: 1px solid var(--col7);
+}
+.container footer{
+    margin-top: 25px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container footer span{
+    color: var(--col8);
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+footer .pagination{
+    display: flex;
+}
+footer .pagination button{
+    width: 40px;
+    padding: 5px 0;
+    color: var(--col8);
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid var(--col6);
+    margin: 0;
+}
+.pagination button:first-child{
+    width: 85px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.pagination button:last-child{
+    width: 85px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.pagination button.active, .pagination button:hover{
+    background: var(--colr);
+}
+.pagination button.act:first-child{
+    opacity: 1;
+    pointer-events: auto;
+}
+.pagination button.act:last-child{
+    opacity: 1;
+    pointer-events: auto;
+}
+table tr .empty{
+    padding: 10px;
+    background: var(--col9);
+}
+/*Popup Form*/
+.dark_bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: scale(0.7);
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+.dark_bg .popup{
+    border-radius: 5px;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
+    background: var(--col6);
+    transform: var(--col6);
+    transition: 0.4s;
+    user-select: none;
+}
+.popup header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--col7);
+    padding: 10px 20px;
+}
+.popup header .closeBtn{
+    font-size: 30px;
+    font-weight: 300;
+    padding: 0 15px;
+}
+.popup header .closeBtn:hover .popup footer .submitBtn:hover{
+    border-color: var(--col7);
+    transition: 0.3s;
+}
+.popup footer{
+    border-top: 1px solid var(--col7);
+    padding: 12px 20px;
+    text-align: right;
+}
+.popup form{
+    padding: 10px 20px;
+    display: flex;
+    align-items: flex-start;
+}
+.popup .imgholder{
+    width: 140px;
+    height: 140px;
+    box-shadow: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 50px;
+    margin-top: 15px;
+}
+.popup .imgholder .upload{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    cursor: pointer;
+    display: none;
+}
+.imgholder:hover .upload{
+    display: flex;
+}
+.imgholder .upload input{
+    display: none;
+}
+.imgholder .upload i{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 300;
+}
+.imgholder .img{
+    width: 100%;
+    height: 100%;
+}
+form .inputFieldContainer .nimField,
+form .inputFieldContainer .nameField,
+form .inputFieldContainer .selfField,
+form .inputFieldContainer .univField,
+form .inputFieldContainer .contactField{
+    justify-content: space-between;
+    display: flex;
+    gap: 15px;
+}
+form .inputFieldContainer .nimField input,
+form .inputFieldContainer .nameField input,
+form .inputFieldContainer .selfField input,
+form .inputFieldContainer .univField input,
+form .inputFieldContainer .contactField input{
+    width: 200px;
+}
+.inputFieldContainer .form_control{
+    margin: 2px 0;
+}
+.inputFieldContainer .form_control label{
+    display: block;
+    color: var(--col8);
+    margin-bottom: 5px;
+}
+.form_control input{
+    padding: 10px;
+    border: 1px solid var(--col6);
+    color: var(--col8);
+    background: var(--col4);
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+    width: 100%;
+}
+.form_control input:focus,
+.form_control input:valid{
+    border-color: var(--col7);
+}
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
+    display: none;
+}
+.active{
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Media query untuk layar kecil (ponsel) */
+@media (max-width: 768px) {
+    .filterEntries {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .filterEntries .entries,
+    .filterEntries .filter,
+    .filterEntries .addMemberBtn {
+        width: 100%;
+        text-align: center;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    table thead {
+        display: none; /* Sembunyikan header tabel di layar kecil */
+    }
+
+    table tbody tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    table tbody tr td {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 0;
+    }
+
+    table tbody tr td:before {
+        content: attr(data-label); /* Tambahkan label di depan data */
+        font-weight: bold;
+        text-transform: capitalize;
+        margin-right: 10px;
+        color: #555;
+    }
+}
+
+/* Media query untuk layar sedang (tablet) */
+@media (max-width: 992px) {
+    .filterEntries {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    table {
+        font-size: 16px;
+    }
+
+    table tbody tr td {
+        padding: 8px;
+    }
+}

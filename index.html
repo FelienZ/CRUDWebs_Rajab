@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website CRUD</title>
+
+        <!--CSS-->
+    <link rel="stylesheet" href="style.css">
+    <!--custom Font-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!--BoxIcon-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="filterEntries">
+                <div class="entries">
+                    Show <select name="id" id="table_size">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                    </select>Entries
+                </div>
+
+                <div class="filter">
+                    <label for="search"> Search: </label>
+                    <input type="search" name="" id="search" placeholder="Enter name/ID/gender">
+                </div>
+            </div>
+            <div class="addMemberBtn">
+                <button>New</button>
+            </div>
+        </header>
+
+        <table>
+            <thead>
+                <tr class="heading">
+                    <th>No</th>
+                    <th>Pic</th>
+                    <th>NIM</th>
+                    <th>Nama</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Jurusan</th>
+                    <th>Angkatan</th>
+                    <th>Email</th>
+                    <th>Whatsapp</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody class="userInfo">
+                <!--<tr><td class="empty" colspan="11" align="center">No data available</td></tr>-->
+                <!--<tr>
+                    <td>1</td>
+                    <td><img src="kilat_5_ok__2_-removebg-preview.png" alt="picture" width="40" height="50"></td>
+                    <td>123</td>
+                    <td>Rajab</td>
+                    <td>Pria</td>
+                    <td>Teknik Informatika</td>
+                    <td>2023</td>
+                    <td>rajabfadh@gmail.com</td>
+                    <td>0812-2956-4138</td>
+                    <td>
+                        <button><i class="fa-regular fa-eye"></i></button>
+                        <button><i class="fa-regular fa-pen-to-square"></i></button>
+                        <button><i class="fa-solid fa-trash-can"></i></button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td><img src="kilat_5_ok__2_-removebg-preview.png" alt="picture" width="40" height="50"></td>
+                    <td>123</td>
+                    <td>Rajab</td>
+                    <td>Pria</td>
+                    <td>Teknik Informatika</td>
+                    <td>2023</td>
+                    <td>rajabfadh@gmail.com</td>
+                    <td>0812-2956-4138</td>
+                    <td>
+                        <button><i class="fa-regular fa-eye"></i></button>
+                        <button><i class="fa-regular fa-pen-to-square"></i></button>
+                        <button><i class="fa-solid fa-trash-can"></i></button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td><img src="kilat_5_ok__2_-removebg-preview.png" alt="picture" width="40" height="50"></td>
+                    <td>123</td>
+                    <td>Rajab</td>
+                    <td>Pria</td>
+                    <td>Teknik Informatika</td>
+                    <td>2023</td>
+                    <td>rajabfadh@gmail.com</td>
+                    <td>0812-2956-4138</td>
+                    <td>
+                        <button><i class="fa-regular fa-eye"></i></button>
+                        <button><i class="fa-regular fa-pen-to-square"></i></button>
+                        <button><i class="fa-solid fa-trash-can"></i></button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td><img src="kilat_5_ok__2_-removebg-preview.png" alt="picture" width="40" height="50"></td>
+                    <td>123</td>
+                    <td>Rajab</td>
+                    <td>Pria</td>
+                    <td>Teknik Informatika</td>
+                    <td>2023</td>
+                    <td>rajabfadh@gmail.com</td>
+                    <td>0812-2956-4138</td>
+                    <td>
+                        <button><i class="fa-regular fa-eye"></i></button>
+                        <button><i class="fa-regular fa-pen-to-square"></i></button>
+                        <button><i class="fa-solid fa-trash-can"></i></button>
+                    </td>
+                </tr> -->
+
+            </tbody>
+        </table>
+
+        <footer>
+            <span class="showEntries">Showing 1 to 10 Of 50 Entries</span>
+            <div class="pagination">
+               <!-- <button>Prev</button>
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>Next</button> -->
+            </div>
+        </footer>
+    </div>
+
+    <!--Popup Form-->
+
+    <div class="dark_bg">
+        <div class="popup">
+            <header>
+                <h2 class="modalTitle">Fill the form</h2>
+                <button class="closeBtn">&times;</button>
+            </header>
+
+            <div class="body">
+                <form action="#" id="myForm">
+                    <div class="imgholder">
+                        <label for="uploadimg" class="upload">
+                            <input type="file" name="" id="uploadimg" class="Picture">
+                            <i class="fa-solid fa-plus"></i>
+                        </label>
+                        <img src="images.png" alt="" width="150" height="150" class="img">
+                    </div>
+
+                    
+
+                    <div class="inputFieldContainer">
+                        
+                    <div class="nimField">
+                        <div class="form_control">
+                            <label for="age">NIM</label>
+                            <input type="number" name="" id="nim" required>
+                        </div>
+                    </div>
+
+                        <div class="namefield">
+                            <div class="form_control">
+                                <label for="fName">First Name</label>
+                                <input type="text" name="" id="fName" required>
+                            </div>
+
+                            <div class="form_control">
+                                <label for="fName">Last Name</label>
+                                <input type="text" name="" id="lName" required>
+                            </div>
+                        </div>
+
+                        <div class="selfField">
+                            <div class="form_control">
+                                <label for="age">Gender</label>
+                                <input type="text" name="" id="jk" required>
+                            </div>
+                        </div>
+
+                        <div class="univField">
+                            <div class="form_control">
+                                <label for="age">Jurusan</label>
+                                <input type="text" name="" id="jurusan" required>
+                            </div>
+
+                            <div class="form_control">
+                                <label for="age">Angkatan</label>
+                                <input type="text" name="" id="angkatan" required>
+                            </div>
+                        </div>
+
+                        <div class="contactField">
+                            <div class="form_control">
+                                <label for="age">Email</label>
+                                <input type="email" name="" id="email" required>
+                            </div>
+
+                            <div class="form_control">
+                                <label for="age">Whatsapp</label>
+                                <input type="number" name="" id="whatsapp" required>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+            <footer class="popupFooter">
+                <button form="myForm" class="submitBtn">Submit</button>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
