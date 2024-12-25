@@ -285,7 +285,7 @@ var newMemberAddBtn = document.querySelector('.addMemberBtn'),
         }
 
         if(!isEdit){
-            originalData.unshift(information)
+            originalData.push(information)
         }
         else{
             originalData[editId] = information
