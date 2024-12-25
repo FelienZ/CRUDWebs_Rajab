@@ -286,6 +286,7 @@ form .inputFieldContainer .univField,
 form .inputFieldContainer .contactField{
     justify-content: space-between;
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
 }
 form .inputFieldContainer .nimField input,
@@ -293,10 +294,14 @@ form .inputFieldContainer .nameField input,
 form .inputFieldContainer .selfField input,
 form .inputFieldContainer .univField input,
 form .inputFieldContainer .contactField input{
-    width: 200px;
+    max-width: 200px;
+    min-width: 120px
+    flex: 1 1 calc(50% - 15px); 
+    box-sizing: border-box;
 }
 .inputFieldContainer .form_control{
     margin: 2px 0;
+    width: 100%;
 }
 .inputFieldContainer .form_control label{
     display: block;
@@ -426,6 +431,19 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
 
     form .inputFieldContainer .form_control {
         margin-bottom: 10px;
+    }
+}
+@media (max-width: 600px) {
+    form .inputFieldContainer .nimField input,
+    form .inputFieldContainer .nameField input,
+    form .inputFieldContainer .selfField input,
+    form .inputFieldContainer .univField input,
+    form .inputFieldContainer .contactField input {
+        flex: 1 1 100%;
+    }
+
+    form .inputFieldContainer {
+        gap: 10px;
     }
 }
 
