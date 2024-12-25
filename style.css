@@ -326,26 +326,64 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
     visibility: visible;
 }
 
-/* Media query untuk layar kecil (ponsel) */
 @media (max-width: 768px) {
-    .filterEntries {
-        flex-direction: column;
-        gap: 10px;
+    .popup {
+        width: 90%;
+        padding: 10px;
     }
 
-    .filterEntries .entries,
-    .filterEntries .filter,
-    .filterEntries .addMemberBtn {
+    .popup form {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .popup .imgholder {
+        margin-right: 0; 
+        margin-top: 10px;
+    }
+
+    .inputFieldContainer {
         width: 100%;
+    }
+
+    .inputFieldContainer .form_control {
+        margin-bottom: 10px;
+    }
+
+    .inputFieldContainer .form_control input {
+        width: 100%; 
+        font-size: 14px;
+    }
+
+    .popup footer {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
         text-align: center;
     }
 
+    .popup footer .submitBtn {
+        width: 100%;
+    }
+
+    .popup header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .popup header .closeBtn {
+        margin-top: 10px;
+    }
+
+   
     table {
         font-size: 14px;
     }
 
     table thead {
-        display: none; /* Sembunyikan header tabel di layar kecil */
+        display: none;
     }
 
     table tbody tr {
@@ -355,6 +393,7 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
         border: 1px solid #ddd;
         border-radius: 5px;
         padding: 10px;
+        background: var(--col3);
     }
 
     table tbody tr td {
@@ -364,7 +403,7 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
     }
 
     table tbody tr td:before {
-        content: attr(data-label); /* Tambahkan label di depan data */
+        content: attr(data-label);
         font-weight: bold;
         text-transform: capitalize;
         margin-right: 10px;
@@ -372,11 +411,23 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
     }
 }
 
-/* Media query untuk layar sedang (tablet) */
 @media (max-width: 992px) {
-    .filterEntries {
-        flex-wrap: wrap;
-        gap: 15px;
+    .popup {
+        width: 80%;
+        padding: 15px;
+    }
+
+    .popup form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .inputFieldContainer .form_control input {
+        width: 100%;
+    }
+
+    .popup footer {
+        justify-content: center;
     }
 
     table {
