@@ -210,6 +210,10 @@ table tr .empty{
 .dark_bg .popup{
     border-radius: 5px;
     box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    overflow-y: auto;
     background: var(--col6);
     transform: var(--col6);
     transition: 0.4s;
