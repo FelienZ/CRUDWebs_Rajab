@@ -342,22 +342,36 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
     .popup {
         width: 90%;
         max-width: 400px;
+        max-height: 90vh;
+        overflow-y: auto;
     }
 
     .popup form {
         flex-direction: column;
+        align-items: center;
     }
-
-    form .inputFieldContainer .form_control {
+    form .inputFieldContainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
         width: 100%;
     }
-
+    form .inputFieldContainer .form_control {
+        flex: 1;
+         min-width: 120px;
+        margin-bottom: 10px;
+    }
+    .popup header {
+        text-align: center;
+    }
     .popup footer {
         text-align: center;
     }
 
     .popup .imgholder {
         margin: 0 auto 20px auto;
+        max-width: 100px;
+        max-height: 100px;
     }
 
     table {
