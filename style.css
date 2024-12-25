@@ -327,57 +327,39 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
 }
 
 @media (max-width: 768px) {
+    .filterEntries {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .filterEntries .entries,
+    .filterEntries .filter,
+    .filterEntries .addMemberBtn {
+        width: 100%;
+        text-align: center;
+    }
+
     .popup {
         width: 90%;
-        padding: 10px;
+        max-width: 400px;
     }
 
     .popup form {
-        flex-direction: column; 
-        align-items: center;
+        flex-direction: column;
     }
 
-    .popup .imgholder {
-        margin-right: 0; 
-        margin-top: 10px;
-    }
-
-    .inputFieldContainer {
+    form .inputFieldContainer .form_control {
         width: 100%;
-    }
-
-    .inputFieldContainer .form_control {
-        margin-bottom: 10px;
-    }
-
-    .inputFieldContainer .form_control input {
-        width: 100%; 
-        font-size: 14px;
     }
 
     .popup footer {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
         text-align: center;
     }
 
-    .popup footer .submitBtn {
-        width: 100%;
+    .popup .imgholder {
+        margin: 0 auto 20px auto;
     }
 
-    .popup header {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-        text-align: center;
-    }
-
-    .popup header .closeBtn {
-        margin-top: 10px;
-    }
-
-   
     table {
         font-size: 14px;
     }
@@ -393,7 +375,6 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
         border: 1px solid #ddd;
         border-radius: 5px;
         padding: 10px;
-        background: var(--col3);
     }
 
     table tbody tr td {
@@ -412,22 +393,9 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
 }
 
 @media (max-width: 992px) {
-    .popup {
-        width: 80%;
-        padding: 15px;
-    }
-
-    .popup form {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .inputFieldContainer .form_control input {
-        width: 100%;
-    }
-
-    .popup footer {
-        justify-content: center;
+    .filterEntries {
+        flex-wrap: wrap;
+        gap: 15px;
     }
 
     table {
@@ -437,4 +405,13 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
     table tbody tr td {
         padding: 8px;
     }
+
+    .popup {
+        width: 80%;
+    }
+
+    form .inputFieldContainer .form_control {
+        margin-bottom: 10px;
+    }
 }
+
