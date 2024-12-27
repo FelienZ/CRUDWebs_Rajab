@@ -50,7 +50,7 @@ var newMemberAddBtn = document.querySelector('.addMemberBtn'),
     crossBtn.addEventListener('click', ()=>{
         darkBg.classList.remove('active')
         popupForm.classList.remove('active')
-        //form.reset()
+        form.reset()
     })
 
     uploadimg.onchange = function(){
@@ -298,7 +298,7 @@ var newMemberAddBtn = document.querySelector('.addMemberBtn'),
 
         darkBg.classList.remove('active')
         popupForm.classList.remove('active')
-        //form.reset()
+        form.reset()
 
         highlightIndexBtn()
         displayIndexBtn()
